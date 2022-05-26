@@ -1,2 +1,2 @@
 # Ignore compiled java files
-/out/
+/out/*
