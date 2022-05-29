@@ -26,7 +26,7 @@ public class Solution244 {
 
             // Prepare a mapping from a word to all it's locations (indices).
             for (int i = 0; i < words.length; i++) {
-                ArrayList<Integer> loc = this.locations.getOrDefault(words[i], new ArrayList<Integer>());
+                ArrayList<Integer> loc = this.locations.containsKey(words[i]) ? this.locations.get(words[i]) : new ArrayList<Integer>();
                 loc.add(i);
                 this.locations.put(words[i], loc);
             }
