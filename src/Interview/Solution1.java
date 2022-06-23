@@ -13,13 +13,14 @@ import java.util.Arrays;
  */
 public class Solution1 {
 
-    public int[] twoSum(int[] sums, int target) {
-        assert sums.length >= 2;
-        Arrays.sort(sums);
+    public int[] twoSum(int[] nums, int target) {
+        //wrong solution
+        assert nums.length >= 2;
+        Arrays.sort(nums);
         int front = 0;
-        int end = sums.length - 1;
+        int end = nums.length - 1;
         while(front < end) {
-            int sum = sums[front] + sums[end];
+            int sum = nums[front] + nums[end];
             if (sum == target) {
                 return new int[]{front, end};
             }
