@@ -16,29 +16,12 @@ import java.util.Map;
 public class Solution1 {
 
     public int[] twoSum(int[] nums, int target) {
-        // corrected solution
         Map<Integer, Integer> numsMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (numsMap.containsKey(target - nums[i])) {
                 return new int[] { numsMap.get(target - nums[i]), i };
             }
             numsMap.put(nums[i], i);
-        }
-        // wrong solution
-        assert nums.length >= 2;
-        Arrays.sort(nums);
-        int front = 0;
-        int end = nums.length - 1;
-        while(front < end) {
-            int sum = nums[front] + nums[end];
-            if (sum == target) {
-                return new int[]{front, end};
-            }
-            if (sum < target) {
-                end--;
-            } else {
-                front++;
-            }
         }
         return null;
     }
